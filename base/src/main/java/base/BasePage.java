@@ -78,7 +78,7 @@ public class BasePage {
 
     @Parameters({"driverConfigEnabled", "browser", "url"})
     @BeforeMethod
-    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("http://mbusa.com") String url) {
+    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https://www.bmwusa.com/") String url) {
         if (Boolean.parseBoolean(driverConfigEnabled)) {
             driverInit(browser);
             driver.get(url);
@@ -185,9 +185,9 @@ public class BasePage {
         element.click();
     }
 
-    public void sendKeysToElement(WebElement element, String keys) {
+    public void sendKeysToElement(WebElement element,String Keys) {
         webDriverWait.until(ExpectedConditions.visibilityOf(element));
-        element.sendKeys(keys);
+        element.sendKeys(Keys);
     }
 
     public void clearSendKeysToElement(WebElement element, String keys) {
